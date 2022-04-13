@@ -6,8 +6,7 @@ import {
   getStatusBarHeight,
 } from "react-native-iphone-x-helper";
 
-import { DataListProps } from '.';
-
+import { DataListProps } from ".";
 
 import { Feather } from "@expo/vector-icons";
 
@@ -99,7 +98,9 @@ export const Title = styled.Text`
 `;
 
 export const TransactionList = styled(
-  FlatList as new (props: FlatListProps<DataListProps>) => FlatList<DataListProps>
+  FlatList as new (
+    props: FlatListProps<DataListProps>
+  ) => FlatList<DataListProps>
 ).attrs({
   showsVerticalScrollIndicator: false,
   contentContainerStyle: {
