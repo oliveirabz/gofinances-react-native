@@ -7,10 +7,10 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-    background-color: ${({ theme }) => theme.colors.primary};
-
     width: 100%;
     height: ${RFValue(113)}px;
+    
+    background-color: ${({ theme }) => theme.colors.primary};
 
     align-items: center;
     justify-content: flex-end;
@@ -32,3 +32,8 @@ export const Form = styled.View`
 `;
 
 export const Fields = styled.View``;
+
+export const TransactionsTypes = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+`;
