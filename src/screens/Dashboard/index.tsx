@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "intl";
 import "intl/locale-data/jsonp/pt-BR";
+
+import { useFocusEffect } from "@react-navigation/native";
 
 import { HighlightCard } from "../../components/HighlightCard";
 import {
@@ -69,7 +71,16 @@ export function Dashboard() {
 
   useEffect(() => {
     loadTransactions();
+
+    const dataKey = "@gofinances:transactions";
+    AsyncStorage.removeItem(dataKey);
   }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      loadTransactions();
+    }, [])
+  );
 
   return (
     <Container>
