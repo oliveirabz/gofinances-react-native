@@ -5,11 +5,12 @@ import { RectButtonProps } from "react-native-gesture-handler";
 
 interface Props extends RectButtonProps {
   title: string;
+  onPress: () => void;
 }
 
-export const Button = ({ title, ...rest }: Props) => {
+export const Button = ({ title, onPress, ...rest }: Props) => {
   return (
-    <Container {...rest}>
+    <Container onPress={onPress} {...rest}>
       <Title>{title}</Title>
     </Container>
   );
