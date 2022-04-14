@@ -10,6 +10,8 @@ import { DataListProps } from ".";
 
 import { Feather } from "@expo/vector-icons";
 
+import { BorderlessButton } from "react-native-gesture-handler";
+
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
@@ -71,6 +73,8 @@ export const Icon = styled<any>(Feather)`
   color: ${({ theme }) => theme.colors.secondary};
   font-size: ${RFValue(24)}px;
 `;
+
+export const LogoutButton = styled<any>(BorderlessButton)``;
 
 export const HighlightsCards = styled.ScrollView.attrs({
   horizontal: true,
