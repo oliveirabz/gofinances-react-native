@@ -1,8 +1,12 @@
-import styled, { css } from "styled-components/native";
+// React
 import { RectButton } from "react-native-gesture-handler";
-
-import { Feather } from "@expo/vector-icons";
 import { RFValue } from "react-native-responsive-fontsize";
+
+// Icons
+import { Feather } from "@expo/vector-icons";
+
+// Styles
+import styled, { css } from "styled-components/native";
 
 interface IconProps {
   type: "up" | "down";

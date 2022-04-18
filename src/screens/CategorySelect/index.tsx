@@ -1,8 +1,11 @@
+// React
 import React from "react";
 import { FlatList } from "react-native";
 
+// Components
 import { Button } from "../../components/Forms/Button";
 
+// categories (utils)
 import { categories } from "../../utils/categories";
 
 import {

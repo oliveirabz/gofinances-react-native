@@ -1,4 +1,7 @@
+// React
 import React from "react";
+
+// categories (utils)
 import { categories } from "../../utils/categories";
 
 import {

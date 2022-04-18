@@ -1,27 +1,33 @@
+// React
+import uuid from "react-native-uuid";
 import React, { useState } from "react";
 import { Modal, TouchableWithoutFeedback, Keyboard, Alert } from "react-native";
 
-import uuid from "react-native-uuid";
-
+// React Navigator
 import {
   useNavigation,
   NavigationProp,
   ParamListBase,
 } from "@react-navigation/native";
 
+// React-Hook-Form
 import { useForm } from "react-hook-form";
 
+// Components
+import { TransactionTypeButton } from "../../components/Forms/TransactionTypeButton";
+import { CategorySelectButton } from "../../components/Forms/CategorySelectButton";
 import { InputForm } from "../../components/Forms/InputForm";
 import { Button } from "../../components/Forms/Button";
-import { TransactionTypeButton } from "../../components/Forms/TransactionTypeButton";
-
 import { CategorySelect } from "../CategorySelect";
 
+// Yup
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+// Async Storage
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+// Styles
 import {
   Container,
   Header,
@@ -30,8 +36,6 @@ import {
   Fields,
   TransactionsTypes,
 } from "./styles";
-
-import { CategorySelectButton } from "../../components/Forms/CategorySelectButton";
 
 interface FormData {
   name: string;
@@ -42,7 +46,8 @@ const schema = Yup.object().shape({
   name: Yup.string().required("Nome é obrigatório"),
   amount: Yup.number()
     .typeError("Informe um valor numérico")
-    .positive("O valor não pode ser negativo"),
+    .positive("O valor não pode ser negativo")
+    .required("O valor é obrigatório"),
 });
 
 export const Register = () => {

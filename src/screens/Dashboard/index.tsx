@@ -1,18 +1,26 @@
+// React
 import React, { useCallback, useEffect, useState } from "react";
 import { ActivityIndicator } from "react-native";
+
+// React Navigation
+import { useFocusEffect } from "@react-navigation/native";
+
+// INTL
 import "intl";
 import "intl/locale-data/jsonp/pt-BR";
 
-import { useFocusEffect } from "@react-navigation/native";
-
+// Components
 import { HighlightCard } from "../../components/HighlightCard";
 import {
   TransactionCard,
   TransactionCardProps,
 } from "../../components/TransactionCard";
 
+// Async Storage
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+// Styles
+import { useTheme } from "styled-components";
 import {
   Container,
   Header,
@@ -30,8 +38,6 @@ import {
   LogoutButton,
   LoadContainer,
 } from "./styles";
-
-import { useTheme } from "styled-components";
 
 export interface DataListProps extends TransactionCardProps {
   id: string;
@@ -57,16 +63,24 @@ export function Dashboard() {
 
   const theme = useTheme();
 
-  function getLastTransactionDate(collection: DataListProps[], type: 'positive' | 'negative') {
+  function getLastTransactionDate(
+    collection: DataListProps[],
+    type: "positive" | "negative"
+  ) {
     const lastTransaction = new Date(
       Math.max.apply(
-      Math,
-      collection // Math rescue the biggest number
-      .filter(transaction =>  transaction.type === type)
-      .map(transaction => new Date(transaction.date).getTime())));
+        Math,
+        collection // Math rescue the biggest number
+          .filter((transaction) => transaction.type === type)
+          .map((transaction) => new Date(transaction.date).getTime())
+      )
+    );
     // I'm taking just the date from transactions array
 
-    return `${lastTransaction.getDate()} de ${lastTransaction.toLocaleString('pt-BR', { month: 'long' })}`
+    return `${lastTransaction.getDate()} de ${lastTransaction.toLocaleString(
+      "pt-BR",
+      { month: "long" }
+    )}`;
   }
 
   async function loadTransactions() {
@@ -106,8 +120,14 @@ export function Dashboard() {
 
     setData(transactionsFormatted);
 
-    const lastTransactionEntries = getLastTransactionDate(transactions, 'positive');
-    const lastTransactionExpensive = getLastTransactionDate(transactions, 'negative');
+    const lastTransactionEntries = getLastTransactionDate(
+      transactions,
+      "positive"
+    );
+    const lastTransactionExpensive = getLastTransactionDate(
+      transactions,
+      "negative"
+    );
     const totalInterval = `01 à ${lastTransactionExpensive}`;
 
     const total = entriesTotal - expensiveTotal;

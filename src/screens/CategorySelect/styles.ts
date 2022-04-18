@@ -1,7 +1,14 @@
+// React
 import { RFValue } from "react-native-responsive-fontsize";
-import { Feather } from "@expo/vector-icons";
-import styled from "styled-components/native";
+
+// Theme
 import theme from "../../global/styles/theme";
+
+// Icons
+import { Feather } from "@expo/vector-icons";
+
+// Styles
+import styled from "styled-components/native";
 
 interface CategoryProps {
   isActive: boolean;

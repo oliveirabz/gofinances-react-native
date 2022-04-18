@@ -1,7 +1,11 @@
-import styled from "styled-components/native";
-
-import { Feather } from "@expo/vector-icons";
+// React
 import { RFValue } from "react-native-responsive-fontsize";
+
+// Icons
+import { Feather } from "@expo/vector-icons";
+
+// Styles
+import styled from "styled-components/native";
 
 interface TransactionProps {
   type: "positive" | "negative";

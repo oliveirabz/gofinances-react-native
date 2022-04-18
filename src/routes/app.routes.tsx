@@ -1,8 +1,14 @@
+// React
 import React from "react";
 import { Platform } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
+
+// React Navigation
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+// Icons
+import { MaterialIcons } from "@expo/vector-icons";
+
+// Styles
 import { useTheme } from "styled-components";
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -45,11 +51,7 @@ export function AppRoutes() {
         component={Register}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <MaterialIcons
-              name="attach-money"
-              size={size}
-              color={color}
-            />
+            <MaterialIcons name="attach-money" size={size} color={color} />
           ),
         }}
       />
@@ -58,11 +60,7 @@ export function AppRoutes() {
         component={Resume}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <MaterialIcons
-              name="pie-chart"
-              size={size}
-              color={color}
-            />
+            <MaterialIcons name="pie-chart" size={size} color={color} />
           ),
         }}
       />

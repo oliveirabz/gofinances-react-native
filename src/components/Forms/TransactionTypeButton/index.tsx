@@ -1,6 +1,8 @@
+// React
 import React from "react";
 import { RectButtonProps } from "react-native-gesture-handler";
 
+// Styles
 import { Container, Icon, Title, Button } from "./styles";
 
 const icons = {

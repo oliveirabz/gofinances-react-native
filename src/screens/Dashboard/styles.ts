@@ -1,16 +1,20 @@
-import styled from "styled-components/native";
-import { FlatList, FlatListProps } from "react-native";
+// React
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { BorderlessButton } from "react-native-gesture-handler";
+import { FlatList, FlatListProps } from "react-native";
 import {
   getBottomSpace,
   getStatusBarHeight,
 } from "react-native-iphone-x-helper";
 
-import { DataListProps } from ".";
-
+// Icons
 import { Feather } from "@expo/vector-icons";
 
-import { BorderlessButton } from "react-native-gesture-handler";
+// Props
+import { DataListProps } from ".";
+
+// Styles
+import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex: 1;
