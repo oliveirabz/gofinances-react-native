@@ -5,6 +5,9 @@ import { StatusBar } from "react-native";
 // React Navigator
 import { NavigationContainer } from "@react-navigation/native";
 
+// Auth Context (React)
+import { AuthProvider } from "./src/hooks/auth";
+
 // Expo
 import AppLoading from "expo-app-loading";
 
@@ -40,7 +43,9 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <NavigationContainer>
         <StatusBar barStyle="light-content" />
-        <SignIn />
+        <AuthProvider>
+          <SignIn />
+        </AuthProvider>
       </NavigationContainer>
     </ThemeProvider>
   );

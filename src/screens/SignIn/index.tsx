@@ -1,7 +1,9 @@
 // React
-import React from "react";
+import React, { useContext } from "react";
 import { RFValue } from "react-native-responsive-fontsize";
 
+// Auth Context (React)
+import { useAuth } from "../../hooks/auth";
 // Assets
 import AppleSvg from "../../assets/apple.svg";
 import GoogleSvg from "../../assets/google.svg";
@@ -21,6 +23,8 @@ import {
 } from "./styles";
 
 export const SignIn = () => {
+  const { user } = useAuth();
+
   return (
     <Container>
       <Header>
