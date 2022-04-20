@@ -5,6 +5,9 @@ import { ActivityIndicator } from "react-native";
 // React Navigation
 import { useFocusEffect } from "@react-navigation/native";
 
+// Auth Context
+import { useAuth } from "../../hooks/auth";
+
 // INTL
 import "intl";
 import "intl/locale-data/jsonp/pt-BR";
@@ -62,6 +65,7 @@ export function Dashboard() {
   );
 
   const theme = useTheme();
+  const { signOut, user } = useAuth();
 
   function getLastTransactionDate(
     collection: DataListProps[],
@@ -185,16 +189,16 @@ export function Dashboard() {
               <UserInfo>
                 <Photo
                   source={{
-                    uri: "https://avatars.githubusercontent.com/u/95765270?v=4",
+                    uri: user.photo,
                   }}
                 />
                 <User>
                   <UserGreeting>Olá,</UserGreeting>
-                  <UserName>Bruna</UserName>
+                  <UserName>{user.name}</UserName>
                 </User>
               </UserInfo>
 
-              <LogoutButton onPress={() => {}}>
+              <LogoutButton onPress={signOut}>
                 <Icon name="power" />
               </LogoutButton>
             </UserWrapper>
