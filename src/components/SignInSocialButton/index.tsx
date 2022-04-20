@@ -1,7 +1,10 @@
+// React
 import React from "react";
-import { RectButtonProps } from "react-native-gesture-handler";
 import { SvgProps } from "react-native-svg";
+import { RectButtonProps } from "react-native-gesture-handler";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
+// Styles
 import { Button, ImageContainer, Text } from "./styles";
 
 interface Props extends RectButtonProps {
@@ -11,12 +14,14 @@ interface Props extends RectButtonProps {
 
 export const SignInSocialButton = ({ title, svg: Svg, ...rest }: Props) => {
   return (
-    <Button>
-      <ImageContainer>
-        <Svg />
-      </ImageContainer>
+    <GestureHandlerRootView>
+      <Button {...rest}>
+        <ImageContainer>
+          <Svg />
+        </ImageContainer>
 
-      <Text>{title}</Text>
-    </Button>
+        <Text>{title}</Text>
+      </Button>
+    </GestureHandlerRootView>
   );
 };

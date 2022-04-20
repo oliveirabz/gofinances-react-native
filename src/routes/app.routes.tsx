@@ -11,8 +11,10 @@ import { MaterialIcons } from "@expo/vector-icons";
 // Styles
 import { useTheme } from "styled-components";
 
+// Tab Navigator
 const { Navigator, Screen } = createBottomTabNavigator();
 
+// Screens
 import { Dashboard } from "../screens/Dashboard";
 import { Register } from "../screens/Register";
 import { Resume } from "../screens/Resume";

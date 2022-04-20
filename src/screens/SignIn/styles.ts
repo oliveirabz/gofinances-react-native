@@ -1,4 +1,7 @@
+// React Native
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+
+// Styles
 import styled from "styled-components/native";
 
 export const Container = styled.View`
