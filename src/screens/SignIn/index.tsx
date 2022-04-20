@@ -1,6 +1,6 @@
 // React
 import React, { useState } from "react";
-import { ActivityIndicator, Alert } from "react-native";
+import { ActivityIndicator, Alert, Platform } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 // Auth Context (React)
@@ -41,7 +41,7 @@ export const SignIn = () => {
       Alert.alert("Não foi possível conectar a conta Google");
     } finally {
       setIsLoading(false);
-    }
+    } // if a perform error shows up, just put the setIsLoading inside of catch {} and delete the finally {}
   }
 
   async function handleSignInWithApple() {
@@ -53,7 +53,7 @@ export const SignIn = () => {
       Alert.alert("Não foi possível conectar a conta Apple");
     } finally {
       setIsLoading(false);
-    }
+    } // if a perform error shows up, just put the setIsLoading inside of catch {} and delete the finally {}
   }
 
   return (
@@ -79,11 +79,13 @@ export const SignIn = () => {
             svg={GoogleSvg}
             onPress={handleSignInWithGoogle}
           />
-          <SignInSocialButton
-            title="Entrar com Apple"
-            svg={AppleSvg}
-            onPress={handleSignInWithApple}
-          />
+          {Platform.OS === "ios" && (
+            <SignInSocialButton
+              title="Entrar com Apple"
+              svg={AppleSvg}
+              onPress={handleSignInWithApple}
+            />
+          )}
         </FooterWrapper>
 
         {isLoading && (
