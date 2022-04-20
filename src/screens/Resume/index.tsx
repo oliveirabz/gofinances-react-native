@@ -7,6 +7,9 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { useFocusEffect } from "@react-navigation/native";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
+// Auth Context
+import { useAuth } from "../../hooks/auth";
+
 // Graphic (libs)
 import { addMonths, subMonths, format } from "date-fns";
 import { VictoryPie } from "victory-native";
@@ -61,6 +64,7 @@ export const Resume = () => {
   );
 
   const theme = useTheme();
+  const { user } = useAuth();
 
   function handleDateChange(action: "next" | "prev") {
     if (action === "next") {
@@ -72,7 +76,7 @@ export const Resume = () => {
 
   async function loadData() {
     setIsLoading(true);
-    const dataKey = "@gofinances:transactions";
+    const dataKey = `@gofinances:transactions_user:${user.id}`;
     const response = await AsyncStorage.getItem(dataKey);
     const responseFormatted = response ? JSON.parse(response) : [];
 

@@ -13,6 +13,9 @@ import {
 // React-Hook-Form
 import { useForm } from "react-hook-form";
 
+// Auth Context
+import { useAuth } from "../../hooks/auth";
+
 // Components
 import { TransactionTypeButton } from "../../components/Forms/TransactionTypeButton";
 import { CategorySelectButton } from "../../components/Forms/CategorySelectButton";
@@ -53,6 +56,8 @@ const schema = Yup.object().shape({
 export const Register = () => {
   const [transactionType, setTransactionType] = useState("");
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
+
+  const { user } = useAuth();
 
   const [category, setCategory] = useState({
     key: "category",
@@ -98,7 +103,7 @@ export const Register = () => {
     };
 
     try {
-      const dataKey = "@gofinances:transactions";
+      const dataKey = `@gofinances:transactions_user:${user.id}`;
       const data = await AsyncStorage.getItem(dataKey);
       const currentData = data ? JSON.parse(data) : [];
 
