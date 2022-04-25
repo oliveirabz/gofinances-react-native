@@ -140,7 +140,7 @@ export const Resume = () => {
   return (
     <Container>
       <Header>
-        <Title>Resumo por categoria</Title>
+        <Title>Summary by category</Title>
       </Header>
       {isLoading ? (
         <LoadContainer>

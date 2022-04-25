@@ -38,7 +38,7 @@ export const SignIn = () => {
       return await signInWithGoogle();
     } catch (error) {
       console.log(error);
-      Alert.alert("Não foi possível conectar a conta Google");
+      Alert.alert("Could not connect with Google account");
     } finally {
       setIsLoading(false);
     } // if a perform error shows up, just put the setIsLoading inside of catch {} and delete the finally {}
@@ -50,7 +50,7 @@ export const SignIn = () => {
       return await signInWithApple();
     } catch (error) {
       console.log(error);
-      Alert.alert("Não foi possível conectar a conta Apple");
+      Alert.alert("Could not connect with Apple account");
     } finally {
       setIsLoading(false);
     } // if a perform error shows up, just put the setIsLoading inside of catch {} and delete the finally {}
@@ -63,25 +63,25 @@ export const SignIn = () => {
           <LogoSvg width={RFValue(120)} height={RFValue(68)} />
 
           <Title>
-            Controle suas {"\n"} finanças de forma {"\n"} muito simples
+            Control your {"\n"} finances in a very {"\n"} simple way
           </Title>
         </TitleWrapper>
 
         <SignInTitle>
-          Faça o seu login com {"\n"} uma das contas abaixo
+          Log in with one {"\n"} of the accounts below
         </SignInTitle>
       </Header>
 
       <Footer>
         <FooterWrapper>
           <SignInSocialButton
-            title="Entrar com Google"
+            title="Sign in with Google"
             svg={GoogleSvg}
             onPress={handleSignInWithGoogle}
           />
           {Platform.OS === "ios" && (
             <SignInSocialButton
-              title="Entrar com Apple"
+              title="Sign in with Apple"
               svg={AppleSvg}
               onPress={handleSignInWithApple}
             />

@@ -209,7 +209,7 @@ export function Dashboard() {
                   }}
                 />
                 <User>
-                  <UserGreeting>Olá,</UserGreeting>
+                  <UserGreeting>Hello,</UserGreeting>
                   <UserName>{user.name}</UserName>
                 </User>
               </UserInfo>
@@ -223,13 +223,13 @@ export function Dashboard() {
           <HighlightsCards>
             <HighlightCard
               type="up"
-              title="Entradas"
+              title="Entries"
               amount={highlightData.entries.amount}
               lastTransaction={highlightData.entries.lastTransaction}
             />
             <HighlightCard
               type="down"
-              title="Saídas"
+              title="Withdraws"
               amount={highlightData.expensive.amount}
               lastTransaction={highlightData.expensive.lastTransaction}
             />
@@ -242,7 +242,7 @@ export function Dashboard() {
           </HighlightsCards>
 
           <Transactions>
-            <Title>Listagem</Title>
+            <Title>Listing</Title>
             <TransactionList
               data={data}
               keyExtractor={(item) => item.id}

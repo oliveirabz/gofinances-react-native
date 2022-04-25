@@ -61,7 +61,7 @@ export const Register = () => {
 
   const [category, setCategory] = useState({
     key: "category",
-    name: "Categoria",
+    name: "Category",
   });
 
   const { navigate }: NavigationProp<ParamListBase> = useNavigation();
@@ -118,10 +118,10 @@ export const Register = () => {
         name: "Categoria",
       });
 
-      navigate("Listagem");
+      navigate("Listing");
     } catch (error) {
       console.log(error);
-      Alert.alert("Não foi possível salvar as informações");
+      Alert.alert("Could not save information");
     }
   }
 
@@ -129,7 +129,7 @@ export const Register = () => {
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <Container>
         <Header>
-          <Title>Cadastro</Title>
+          <Title>Register</Title>
         </Header>
 
         <Form>
@@ -137,7 +137,7 @@ export const Register = () => {
             <InputForm
               name="name"
               control={control}
-              placeholder="Nome"
+              placeholder="Name"
               autoCapitalize="sentences"
               autoCorrect={false}
               error={errors.name && errors.name.message}
@@ -146,7 +146,7 @@ export const Register = () => {
             <InputForm
               name="amount"
               control={control}
-              placeholder="Preço"
+              placeholder="Price"
               keyboardType="numeric"
               error={errors.amount && errors.amount.message}
             />
@@ -173,7 +173,7 @@ export const Register = () => {
             />
           </Fields>
 
-          <Button title="Enviar" onPress={handleSubmit(handleRegister)} />
+          <Button title="Send" onPress={handleSubmit(handleRegister)} />
         </Form>
 
         <Modal visible={categoryModalOpen}>

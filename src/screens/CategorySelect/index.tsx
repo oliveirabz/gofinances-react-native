@@ -42,7 +42,7 @@ export const CategorySelect = ({
   return (
     <Container>
       <Header>
-        <Title>Categoria</Title>
+        <Title>Category</Title>
       </Header>
 
       <FlatList
@@ -62,7 +62,7 @@ export const CategorySelect = ({
       />
 
       <Footer>
-        <Button title="Selecionar" onPress={closeSelectCategory} />
+        <Button title="Select" onPress={closeSelectCategory} />
       </Footer>
     </Container>
   );
