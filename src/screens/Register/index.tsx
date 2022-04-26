@@ -161,7 +161,7 @@ export const Register = () => {
 
               <TransactionTypeButton
                 type="down"
-                title="Outocome"
+                title="Outcome"
                 onPress={() => handleTransactionsTypeSelect("negative")}
                 isActive={transactionType === "negative"}
               />
